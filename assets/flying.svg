@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160">
+  <!-- Cheerleader Flyer Silhouette - Subtle Doodle Style -->
+  <!-- Replace this file with any transparent PNG of your choice -->
+  <g fill="#E05344" opacity="0.18">
+    <!-- Head -->
+    <circle cx="60" cy="22" r="12"/>
+    <!-- Body -->
+    <path d="M54 34 Q60 38 66 34 L68 70 Q60 74 52 70 Z"/>
+    <!-- Left arm reaching up -->
+    <path d="M52 40 Q34 18 28 12 L26 14 Q36 24 48 42 Z"/>
+    <!-- Right arm reaching up -->
+    <path d="M68 40 Q86 18 92 12 L94 14 Q84 24 72 42 Z"/>
+    <!-- Left leg - split leap -->
+    <path d="M54 70 Q38 82 24 78 L24 82 Q40 88 56 74 Z"/>
+    <!-- Right leg - split leap -->
+    <path d="M66 70 Q82 82 96 78 L96 82 Q80 88 64 74 Z"/>
+    <!-- Ponytail -->
+    <path d="M68 16 Q78 10 82 18 Q76 14 70 20 Z"/>
+    <!-- Small star near hand -->
+    <path d="M22 8 L24 4 L26 8 L22 8 Z" opacity="0.6"/>
+    <path d="M96 8 L98 4 L100 8 L96 8 Z" opacity="0.6"/>
+  </g>
+</svg>

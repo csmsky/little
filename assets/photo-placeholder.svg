@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2EDE4"/>
+      <stop offset="100%" stop-color="#E5DCCE"/>
+    </linearGradient>
+    <pattern id="paperPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#D3C7B5" opacity="0.35"/>
+      <circle cx="12" cy="14" r="0.6" fill="#D3C7B5" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Photo Area Background -->
+  <rect width="400" height="500" fill="url(#bgGrad)"/>
+  <rect width="400" height="500" fill="url(#paperPattern)"/>
+
+  <!-- Subtle Dashed Frame -->
+  <rect x="24" y="24" width="352" height="452" fill="none" stroke="#C4B59F" stroke-width="1.5" stroke-dasharray="6 6" rx="4"/>
+
+  <!-- Center Graphic: Camera / Snapshot Doodle -->
+  <g transform="translate(200, 210)" text-anchor="middle">
+    <!-- Camera Body -->
+    <rect x="-44" y="-30" width="88" height="64" rx="8" fill="#FAF6F0" stroke="#8A7B68" stroke-width="2.5"/>
+    <rect x="-18" y="-40" width="36" height="12" rx="3" fill="#8A7B68"/>
+    <!-- Camera Lens -->
+    <circle cx="0" cy="2" r="20" fill="#E8DFD1" stroke="#8A7B68" stroke-width="2.5"/>
+    <circle cx="0" cy="2" r="10" fill="#FAF6F0"/>
+    <circle cx="4" cy="-2" r="3" fill="#8A7B68"/>
+    <!-- Small Flash -->
+    <circle cx="28" cy="-14" r="4" fill="#E05344"/>
+    
+    <!-- Sparkle Stars -->
+    <path d="M-55,-25 Q-65,-25 -65,-35 Q-65,-25 -75,-25 Q-65,-25 -65,-15 Q-65,-25 -55,-25 Z" fill="#F4D06F"/>
+    <path d="M60,10 Q70,10 70,0 Q70,10 80,10 Q70,10 70,20 Q70,10 60,10 Z" fill="#E05344"/>
+
+    <!-- Placeholder Labels -->
+    <text y="70" font-family="'Caveat', cursive, sans-serif" font-size="24" font-weight="bold" fill="#2D2824">
+      [ your photo goes here! ]
+    </text>
+    <text y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#8A7B68" letter-spacing="0.5">
+      replace with assets/photo.jpg
+    </text>
+    <text y="118" font-family="'Caveat', cursive, sans-serif" font-size="16" fill="#D94A38">
+      (drop in any cute photo of her)
+    </text>
+  </g>
+</svg>
