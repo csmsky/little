@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Little Thing For You :></title>
+  <meta name="description" content="A handmade digital keepsake made with care.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="interactive-flower-loader">
+    <div class="loader-instruction">pick the flowers to make a bouquet ✨</div>
+
+    <div id="flower-field"></div>
+
+    <div id="bouquet-box">
+      <div class="box-label">Collected</div>
+      <div id="collected-flowers"></div>
+    </div>
+
+    <!-- NEW: THE BIG REVEAL BEFORE THE PAGE LOADS -->
+    <div id="big-bouquet-reveal">
+      <div class="big-bouquet-wrapper">
+        <div id="big-bouquet-flowers"></div>
+        <div class="big-bouquet-ribbon">🎀</div>
+      </div>
+      <p class="big-bouquet-text">for you :&gt;</p>
+    </div>
+  </div>
+
+
+  <main class="scrapbook-page">
+
+    <!-- Header -->
+    <header class="dispatch-header">
+      <div class="stamp-mark">
+        <span class="stamp-code">Hi</span>
+        <span class="stamp-label">Aimeeeeeee!!</span>
+      </div>
+      <div class="date-annotation">
+        <span class="handwritten-date">good dayyyy :&gt;</span>
+      </div>
+    </header>
+
+    <!-- Headline -->
+    <section class="zine-headline-area">
+      <div class="doodle-sparkle left-sparkle">✦</div>
+      <h1 class="zine-title">
+        A small <span class="accent-curved">curated</span> dispatch.
+      </h1>
+      <div class="doodle-sparkle right-sparkle">★</div>
+      <p class="zine-strapline">
+
+      </p>
+    </section>
+
+    <!-- MAIN VISUAL -->
+    <section class="photo-feature-area">
+      <div class="arrow-annotation" aria-hidden="true">
+        <span class="annotation-text">look at you :&gt;</span>
+        <svg class="curved-arrow-svg" viewBox="0 0 100 50" width="80" height="40" fill="none">
+          <path d="M10 15 C 40 5, 70 10, 85 38" stroke="#E05344" stroke-width="2.5" stroke-linecap="round"
+            stroke-dasharray="0.5 0.5" />
+          <path d="M72 35 L 85 38 L 86 24" stroke="#E05344" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <div class="photo-print-card" id="main-photo-frame">
+        <div class="washi-tape tape-top" aria-hidden="true"></div>
+        <div class="photo-matte">
+          <img src="assets/photo1.jpg" alt="A photo for you" class="photo-element" id="featured-photo" loading="eager">
+        </div>
+        <div class="photo-caption-bar">
+          <span class="caption-handwritten">leg day coach HAHAHAHA</span>
+          <span class="caption-heart">♡</span>
+        </div>
+        <div class="washi-tape tape-corner" aria-hidden="true"></div>
+      </div>
+
+      <div class="side-tag">
+        <span>EXHIBIT A</span>
+      </div>
+    </section>
+
+    <!-- PERSONAL MESSAGE: Physical Stationery Card -->
+    <section class="message-stationery-area">
+      <div class="stationery-card">
+        <div class="paperclip-detail" aria-hidden="true"></div>
+
+        <div class="card-inner-ruled" style="position: relative;">
+
+          <!-- Salutation stays visible -->
+          <div class="letter-salutation">hellaurrrrr :&gt;</div>
+
+          <!-- THE LOCK SCREEN OVERLAY -->
+          <div class="password-overlay" id="lock-screen">
+            <span class="lock-icon">🔒</span>
+            <p class="lock-text">Protected message.<br>Ask me for the passcode :p</p>
+            <div class="passcode-group">
+              <input type="password" id="passcode-input" maxlength="3" placeholder="***">
+              <button class="unlock-btn" onclick="unlockMessage()">Unlock</button>
+            </div>
+            <p class="error-msg" id="passcode-error">wrong code, nice try tho 🙄</p>
+          </div>
+
+          <!-- THE BLURRED MESSAGE -->
+          <div class="locked-content blurred" id="secret-text">
+            <div class="letter-body">
+              <p class="lead-line">i dont reallyy know if pano to simulann without making it sound way to serious hehe
+                pero ill tryyy.</p>
+              <p>its just that i really enjoy spending time with you lately. coffee, gym sesh lalo na leg day
+                hahahahaha, even random and little walks, and on our normal days talking about our days of living
+                our lives. ik nag-meet palang us not very long ago pero i think its decently long enough to see how
+                genuine and pure u aree.
+
+                thank God that for some reason we crossed paths hehehe. continueeeee being you andd keep that relentless
+                pursuit of becoming more. ANDDD i will takee notes about sa pag balance mooo sa school, work, training,
+                and own ganaps :p
+
+                idkk if obvious HAHAAHAHA pero ill be straightforward with it na i genuinely like youu and would also
+                like to keep getting to knoww uu moreee hehe :>
+              </p>
+              <p>anywaysss, goodluckkkkk sa classes andd traininggg and i hope<mark class="highlighter">yall do well
+                  andd sanaa win it all
+                  sa mga upcoming competitions niyo</mark> </p>
+              <p class="closing-line">havee a great restt of yourr dayyyy :&gt;</p>
+            </div>
+
+            <div class="letter-signature-row">
+              <span class="sig-note">— k</span>
+              <span class="little-doodle-star">★</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: SWIPEABLE PHOTO ALBUM CAROUSEL -->
+    <section class="album-area">
+      <div class="section-title-handwritten">
+        <span class="doodle-star">✧</span> captured moments <span class="doodle-star">✧</span>
+      </div>
+      <div class="swipe-hint">(swipe to see more ➔)</div>
+
+      <div class="photo-carousel">
+        <!-- Photo 1 -->
+        <div class="mini-photo-card rotate-left">
+          <div class="washi-tape tape-small"></div>
+          <img src="assets/photo2.jpg" alt="Us" class="mini-photo">
+          <div class="mini-caption">hehe</div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="mini-photo-card rotate-right">
+          <div class="washi-tape tape-small-2"></div>
+          <img src="assets/photo3.jpg" alt="Us" class="mini-photo">
+          <div class="mini-caption">cute :></div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="mini-photo-card rotate-left-slight">
+          <div class="washi-tape tape-small-3"></div>
+          <img src="assets/photo4.jpg" alt="Us" class="mini-photo">
+          <div class="mini-caption">faveee</div>
+        </div>
+
+        <!-- You can easily add more of these blocks right here! -->
+      </div>
+    </section>
+
+    <!-- PLAYABLE MIXTAPE -->
+    <section class="playlist-area">
+      <div class="playlist-card">
+        <div class="playlist-header">
+          <span class="tape-label">MIXTAPE VOL. 1</span>
+          <h2 class="playlist-title">songs for u 🎵</h2>
+        </div>
+
+        <ul class="tracklist">
+          <!-- Track 1 -->
+          <li class="track" onclick="togglePlay('track1')">
+            <span class="track-number">01</span>
+            <div class="track-info">
+              <span class="track-name">Aphrodite</span>
+              <span class="track-artist">The Ridleys</span>
+            </div>
+            <div class="track-controls">
+              <span class="play-icon" id="icon-track1">▶️</span>
+            </div>
+            <!-- Put your .mp3 file in the assets folder and link it here -->
+            <audio id="track1" src="assets/song1.mp3" preload="metadata"></audio>
+          </li>
+
+          <!-- Track 2 -->
+          <li class="track" onclick="togglePlay('track2')">
+            <span class="track-number">02</span>
+            <div class="track-info">
+              <span class="track-name">Moving Closer</span>
+              <span class="track-artist">Never the Strangers</span>
+            </div>
+            <div class="track-controls">
+              <span class="play-icon" id="icon-track2">▶️</span>
+            </div>
+            <audio id="track2" src="assets/song2.mp3" preload="metadata"></audio>
+          </li>
+
+          <!-- Track 3 -->
+          <li class="track" onclick="togglePlay('track3')">
+            <span class="track-number">03</span>
+            <div class="track-info">
+              <span class="track-name">Love is</span>
+              <span class="track-artist">The Ridleys</span>
+            </div>
+            <div class="track-controls">
+              <span class="play-icon" id="icon-track3">▶️</span>
+            </div>
+            <audio id="track3" src="assets/song3.mp3" preload="metadata"></audio>
+          </li>
+        </ul>
+
+        <div class="playlist-footer">
+          <span class="playlist-note">tap a song to play it :p</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="scrapbook-footer">
+      <div class="footer-divider-doodle" aria-hidden="true">
+        <span>〰〰〰〰〰〰〰〰〰〰〰〰〰</span>
+      </div>
+      <p class="footer-statement">made with genuinity :p</p>
+      <div class="footer-fineprint">
+        <span>HAVEE A GREATTT DAYYY!!!</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1256 @@
+/* ===================================================================
+   HANDMADE DIGITAL KEEPSAKE - Stylesheet
+   Art direction: Personal scrapbook / editorial zine / printed card
+   =================================================================== */
+
+:root {
+  /* Physical Paper & Print Palette */
+  --paper-bg: #FBF8F2;
+  --paper-card: #FFFDF9;
+  --paper-grain: #F3ECE1;
+  --ink-main: #231F1D;
+  --ink-muted: #5C544E;
+  --ink-faint: #8E8378;
+
+  --color-coral: #E05344;
+  --color-blush: #F4C7C3;
+  --color-tape: rgba(244, 199, 195, 0.78);
+  --color-yellow: #FDE68A;
+  --color-stamp: #283344;
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-hand: 'Caveat', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Tactile Shadows */
+  --shadow-paper: 0 4px 20px rgba(45, 38, 34, 0.08), 0 1px 3px rgba(45, 38, 34, 0.05);
+  --shadow-photo: 0 10px 30px rgba(45, 38, 34, 0.14), 0 2px 6px rgba(45, 38, 34, 0.08);
+  --shadow-lift: 0 14px 34px rgba(45, 38, 34, 0.18), 0 3px 8px rgba(45, 38, 34, 0.1);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: #EFE8DD;
+  /* Neutral desk surface on desktop */
+  color: var(--ink-main);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===================================================================
+   Physical Scrapbook Page (Single-Page Mobile Frame)
+   =================================================================== */
+.scrapbook-page {
+  width: 100%;
+  max-width: 440px;
+  /* Perfect smartphone dimension */
+  min-height: 100dvh;
+  background-color: var(--paper-bg);
+  /* Tactile paper fiber texture */
+  background-image: radial-gradient(var(--paper-grain) 0.75px, transparent 0.75px),
+    radial-gradient(var(--paper-grain) 0.75px, var(--paper-bg) 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  padding: 1.75rem 1.4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Desktop framing embellishment */
+@media (min-width: 600px) {
+  body {
+    padding: 2.5rem 1rem;
+    background-color: #E7DFD3;
+  }
+
+  .scrapbook-page {
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(45, 38, 34, 0.18),
+      0 0 0 1px rgba(45, 38, 34, 0.06);
+    margin: 0 auto;
+  }
+}
+
+/* ===================================================================
+   1. Dispatch Postal Header
+   =================================================================== */
+.dispatch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px dashed rgba(92, 84, 78, 0.2);
+}
+
+.stamp-mark {
+  border: 1.5px solid var(--color-stamp);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  background: rgba(40, 51, 68, 0.03);
+  transform: rotate(-1deg);
+}
+
+.stamp-code {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-stamp);
+}
+
+.stamp-label {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-coral);
+}
+
+.date-annotation {
+  display: flex;
+  align-items: center;
+}
+
+.handwritten-date {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  transform: rotate(1.5deg);
+}
+
+/* ===================================================================
+   Headline Area
+   =================================================================== */
+.zine-headline-area {
+  position: relative;
+  padding: 0.5rem 0.25rem 0;
+}
+
+.doodle-sparkle {
+  position: absolute;
+  color: var(--color-coral);
+  font-size: 1.1rem;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.left-sparkle {
+  top: -8px;
+  left: 0;
+  transform: rotate(-12deg);
+}
+
+.right-sparkle {
+  top: 10px;
+  right: 8px;
+  color: #E2A727;
+  transform: rotate(15deg);
+}
+
+.zine-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 7vw, 2.3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink-main);
+}
+
+.accent-curved {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-coral);
+  position: relative;
+  display: inline-block;
+}
+
+.accent-curved::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 2px;
+  height: 8px;
+  background: var(--color-yellow);
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 2px;
+}
+
+.zine-strapline {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  line-height: 1.35;
+  margin-top: 0.4rem;
+  transform: rotate(-0.5deg);
+}
+
+/* ===================================================================
+   2. MAIN VISUAL: Photo Feature with Pep-Squad Float Motion
+   =================================================================== */
+.photo-feature-area {
+  position: relative;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Handwritten Arrow pointing at photo */
+.arrow-annotation {
+  position: absolute;
+  top: -24px;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  pointer-events: none;
+}
+
+.annotation-text {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  transform: rotate(-8deg);
+  white-space: nowrap;
+}
+
+.curved-arrow-svg {
+  transform: rotate(5deg) translateY(4px);
+}
+
+/* The Photo Print Card */
+.photo-print-card {
+  width: 92%;
+  max-width: 340px;
+  background: #FFFFFF;
+  padding: 12px 12px 18px 12px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-photo);
+  border: 1px solid rgba(45, 38, 34, 0.08);
+  position: relative;
+
+  /* Cheerleader / Pep Squad Flyer Energetic Float Animation */
+  animation: cheerFloat 4.2s ease-in-out infinite alternate;
+  transform-origin: center center;
+  transition: box-shadow 0.3s ease;
+}
+
+.photo-print-card:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+/* Cheer Float Keyframes: Lively, buoyant, gentle wobble */
+@keyframes cheerFloat {
+  0% {
+    transform: rotate(-2.5deg) translateY(0px) scale(1);
+  }
+
+  25% {
+    transform: rotate(-1deg) translateY(-8px) scale(1.012);
+  }
+
+  50% {
+    transform: rotate(-3.2deg) translateY(-2px) scale(1.004);
+  }
+
+  75% {
+    transform: rotate(-1.6deg) translateY(-10px) scale(1.018);
+  }
+
+  100% {
+    transform: rotate(-2.5deg) translateY(0px) scale(1);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .photo-print-card {
+    animation: none !important;
+    transform: rotate(-2deg);
+  }
+}
+
+/* Physical Washi Tape */
+.washi-tape {
+  position: absolute;
+  height: 26px;
+  background: var(--color-tape);
+  box-shadow: 0 1px 3px rgba(45, 38, 34, 0.1);
+  z-index: 5;
+  pointer-events: none;
+  /* subtle washi tape stripes */
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 6px,
+      rgba(255, 255, 255, 0.25) 6px,
+      rgba(255, 255, 255, 0.25) 12px);
+  opacity: 0.92;
+}
+
+/* Top center tape */
+.tape-top {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1.5deg);
+  width: 110px;
+  /* Jagged paper ends */
+  clip-path: polygon(0% 0%, 5% 40%, 0% 100%,
+      100% 100%, 95% 60%, 100% 0%);
+}
+
+/* Corner tape accent */
+.tape-corner {
+  bottom: -10px;
+  right: -8px;
+  width: 70px;
+  transform: rotate(-35deg);
+  clip-path: polygon(0% 0%, 6% 50%, 0% 100%,
+      100% 100%, 94% 50%, 100% 0%);
+}
+
+/* Matte & Photo Image */
+.photo-matte {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #F3ECE1;
+  overflow: hidden;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(45, 38, 34, 0.08);
+}
+
+.photo-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption bar under photo */
+.photo-caption-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.75rem;
+}
+
+.caption-handwritten {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-main);
+  letter-spacing: -0.01em;
+}
+
+.caption-heart {
+  color: var(--color-coral);
+  font-size: 1.1rem;
+}
+
+/* Side Tag Annotation */
+.side-tag {
+  position: absolute;
+  right: 2px;
+  bottom: 25px;
+  background: var(--ink-main);
+  color: var(--paper-bg);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  transform: rotate(6deg);
+  box-shadow: 0 2px 6px rgba(45, 38, 34, 0.15);
+}
+
+/* ===================================================================
+   3. PERSONAL MESSAGE: Ruled Stationery Card
+   =================================================================== */
+.message-stationery-area {
+  position: relative;
+  padding: 0.25rem 0.2rem;
+}
+
+.stationery-card {
+  background-color: var(--paper-card);
+  border: 1px solid rgba(45, 38, 34, 0.09);
+  border-radius: 3px;
+  box-shadow: var(--shadow-paper);
+  position: relative;
+  /* Intentional slight counter-tilt */
+  transform: rotate(1deg);
+  transition: transform 0.2s ease;
+}
+
+/* Paperclip graphic at top */
+.paperclip-detail {
+  position: absolute;
+  top: -14px;
+  left: 28px;
+  width: 14px;
+  height: 38px;
+  border: 2.5px solid #8A8580;
+  border-radius: 8px;
+  z-index: 10;
+  background: transparent;
+  box-shadow: 1px 2px 4px rgba(45, 38, 34, 0.12);
+}
+
+.card-inner-ruled {
+  padding: 1.75rem 1.4rem 1.5rem;
+  /* Subtle lined stationery notebook background */
+  background-image: repeating-linear-gradient(transparent,
+      transparent 28px,
+      rgba(142, 131, 120, 0.12) 28px,
+      rgba(142, 131, 120, 0.12) 29px);
+  line-height: 29px;
+  /* Matches ruling perfectly */
+}
+
+.letter-salutation {
+  font-family: var(--font-hand);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.letter-body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink-main);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.letter-body p {
+  line-height: 1.65;
+}
+
+.lead-line {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-main);
+}
+
+/* Highlighter accent marker */
+.highlighter {
+  background: var(--color-yellow);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  font-weight: 600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Playful crossed out thought */
+.playful-crossed-out {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scribble-strike {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-coral);
+  text-decoration-thickness: 2px;
+  color: var(--ink-muted);
+}
+
+.margin-correction {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  transform: rotate(-2deg);
+}
+
+.closing-line {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+/* Signature */
+.letter-signature-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.sig-note {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink-main);
+}
+
+.little-doodle-star {
+  color: #E2A727;
+  font-size: 1rem;
+}
+
+
+
+/* ===================================================================
+   FLOATING CHEER-FLYER BACKGROUND DECORATION
+   A small silhouette that drifts gently through the background,
+   referencing that she is a pep squad flyer.
+   =================================================================== */
+.flying-deco {
+  position: fixed;
+  z-index: 0;
+  /* Behind all main content */
+  pointer-events: none;
+  will-change: transform;
+}
+
+.flying-deco__img {
+  display: block;
+  width: 60px;
+  height: auto;
+  opacity: 0.14;
+  filter: drop-shadow(0 2px 4px rgba(45, 38, 34, 0.06));
+}
+
+/* Instance 1: Slow diagonal drift — bottom-left → upper-right and back */
+.flying-deco--1 {
+  top: 30%;
+  left: -20px;
+  animation: flyPath1 28s ease-in-out infinite alternate;
+}
+
+/* Instance 2: Slightly larger, slower, different path — upper-right → mid-left */
+.flying-deco--2 {
+  top: 60%;
+  right: -16px;
+  animation: flyPath2 36s ease-in-out infinite alternate-reverse;
+}
+
+.flying-deco--2 .flying-deco__img {
+  width: 44px;
+  opacity: 0.09;
+  transform: scaleX(-1);
+  /* Mirror for visual variety */
+}
+
+/* Path 1: Gentle S-curve drift with rotation and vertical bobbing */
+@keyframes flyPath1 {
+  0% {
+    transform: translate(0, 0) rotate(-6deg) scale(1);
+  }
+
+  15% {
+    transform: translate(45px, -50px) rotate(2deg) scale(1.04);
+  }
+
+  35% {
+    transform: translate(100px, -20px) rotate(-4deg) scale(0.98);
+  }
+
+  50% {
+    transform: translate(140px, -80px) rotate(5deg) scale(1.02);
+  }
+
+  70% {
+    transform: translate(100px, -120px) rotate(-3deg) scale(0.96);
+  }
+
+  85% {
+    transform: translate(60px, -60px) rotate(4deg) scale(1.05);
+  }
+
+  100% {
+    transform: translate(30px, -30px) rotate(-5deg) scale(1);
+  }
+}
+
+/* Path 2: Different arc, moving the opposite direction */
+@keyframes flyPath2 {
+  0% {
+    transform: translate(0, 0) rotate(4deg) scale(1);
+  }
+
+  20% {
+    transform: translate(-30px, -40px) rotate(-5deg) scale(1.06);
+  }
+
+  40% {
+    transform: translate(-70px, 15px) rotate(3deg) scale(0.95);
+  }
+
+  60% {
+    transform: translate(-50px, -60px) rotate(-4deg) scale(1.03);
+  }
+
+  80% {
+    transform: translate(-90px, -25px) rotate(6deg) scale(0.97);
+  }
+
+  100% {
+    transform: translate(-40px, -10px) rotate(-3deg) scale(1);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .flying-deco {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* =========================================================
+   FLOATING FLYING DECORATIONS
+   Replace the emoji/object later with your own PNG.
+   ========================================================= */
+
+.flying-deco {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+.flying-dummy {
+  font-size: 42px;
+  display: block;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.12));
+}
+
+/* First flying object */
+.flying-deco--1 {
+  top: 18%;
+  right: 8%;
+  animation: flyerFloatOne 6s ease-in-out infinite;
+}
+
+/* Second flying object */
+.flying-deco--2 {
+  top: 58%;
+  left: 7%;
+  animation: flyerFloatTwo 8s ease-in-out infinite;
+}
+
+/* Gentle floating + slight rotation */
+@keyframes flyerFloatOne {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(5deg);
+  }
+
+  50% {
+    transform: translate3d(-18px, -25px, 0) rotate(-5deg);
+  }
+}
+
+@keyframes flyerFloatTwo {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(22px, -18px, 0) rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flying-deco {
+    animation: none;
+  }
+}
+
+/* ===================================================================
+   4. MINI PHOTO ALBUM & PLAYLIST
+   =================================================================== */
+
+/* Mini Album Carousel */
+.album-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.swipe-hint {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--ink-faint);
+  margin-top: -5px;
+  margin-bottom: 10px;
+  transform: rotate(-1deg);
+}
+
+.photo-carousel {
+  display: flex;
+  gap: 1.5rem;
+  width: 100vw;
+  /* Allows edge-to-edge scrolling */
+  max-width: 440px;
+  /* Keeps it contained on desktop */
+  overflow-x: auto;
+  /* Makes it "snap" into place when swiping */
+  padding: 1rem 2.5rem 2rem 2.5rem;
+
+  /* Hides the ugly default scrollbar but keeps the scrolling function */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.photo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.mini-photo-card {
+  flex: 0 0 75%;
+  /* Each photo takes up 75% of the screen, so the next one peeks out */
+  scroll-snap-align: center;
+  /* Snaps the photo to the center of the screen */
+  background: #FFFFFF;
+  padding: 10px 10px 14px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-paper);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.mini-photo-card:hover {
+  transform: scale(1.02) rotate(0deg);
+  z-index: 10;
+}
+
+/* Subtle rotations for the polaroid feel */
+.mini-photo-card.rotate-left {
+  transform: rotate(-3deg);
+}
+
+.mini-photo-card.rotate-right {
+  transform: rotate(4deg);
+}
+
+.mini-photo-card.rotate-left-slight {
+  transform: rotate(-1.5deg);
+}
+
+.mini-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #F3ECE1;
+  border-radius: 1px;
+}
+
+.mini-caption {
+  font-family: var(--font-hand);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: var(--ink-main);
+  line-height: 1;
+}
+
+
+/* Playlist / Mixtape Area */
+.playlist-area {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.playlist-card {
+  background: var(--paper-card);
+  border: 1px dashed rgba(45, 38, 34, 0.15);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-paper);
+  position: relative;
+  transform: rotate(1deg);
+}
+
+.playlist-header {
+  border-bottom: 2px dashed rgba(92, 84, 78, 0.15);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.tape-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--ink-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.playlist-title {
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  color: var(--color-coral);
+  transform: rotate(-2deg);
+}
+
+.tracklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(142, 131, 120, 0.04);
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--color-coral);
+  transition: background 0.2s ease;
+}
+
+.track:hover {
+  background: rgba(142, 131, 120, 0.08);
+}
+
+.track-number {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-coral);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.track-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink-main);
+}
+
+.track-artist {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+.track-heart {
+  font-size: 0.9rem;
+  opacity: 0.4;
+}
+
+.playlist-footer {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.playlist-note {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: var(--ink-muted);
+  transform: rotate(1deg);
+  display: inline-block;
+}
+
+/* Custom Audio Player Styles */
+.track {
+  cursor: pointer;
+  /* Shows the tapping hand icon on hover */
+  position: relative;
+}
+
+.track.playing {
+  background: rgba(224, 83, 68, 0.08);
+  /* Slight coral highlight when playing */
+  border-left: 3px solid #E2A727;
+  /* Turns the border gold */
+}
+
+.play-icon {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.track:hover .play-icon {
+  transform: scale(1.15);
+  /* Tiny pop effect on hover */
+  opacity: 1;
+}
+
+
+/* ===================================================================
+   PASSWORD LOCK SCREEN STYLES
+   =================================================================== */
+.locked-content {
+  transition: filter 0.8s ease, opacity 0.8s ease;
+}
+
+.locked-content.blurred {
+  filter: blur(6px);
+  opacity: 0.4;
+  pointer-events: none;
+  /* Prevents her from highlighting/copying the blurred text */
+  user-select: none;
+}
+
+.password-overlay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 253, 249, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1.5px dashed var(--color-coral);
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 10;
+  width: 85%;
+  max-width: 260px;
+  box-shadow: 0 4px 15px rgba(45, 38, 34, 0.12);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.password-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lock-icon {
+  font-size: 1.5rem;
+}
+
+.lock-text {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--ink-main);
+  margin: 0.5rem 0 1rem;
+  line-height: 1.2;
+  transform: rotate(-1deg);
+}
+
+.passcode-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#passcode-input {
+  width: 60px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 1px solid rgba(92, 84, 78, 0.3);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink-main);
+  outline: none;
+  padding: 0.2rem;
+}
+
+#passcode-input:focus {
+  border-color: var(--color-coral);
+}
+
+.unlock-btn {
+  background: var(--color-coral);
+  color: #fff;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  padding: 0 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.unlock-btn:hover {
+  background: #c94639;
+}
+
+.error-msg {
+  font-family: var(--font-hand);
+  color: var(--color-coral);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.error-msg.show {
+  opacity: 1;
+}
+
+/* Shake animation for wrong password */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* ===================================================================
+   INTERACTIVE FLOWER LOADER (BOUQUET BOX VERSION)
+   =================================================================== */
+#interactive-flower-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--paper-bg);
+  background-image: radial-gradient(var(--paper-grain) 0.75px, transparent 0.75px),
+    radial-gradient(var(--paper-grain) 0.75px, var(--paper-bg) 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  overflow: hidden;
+}
+
+#interactive-flower-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-instruction {
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  color: var(--ink-main);
+  margin-top: 12vh;
+  transform: rotate(-2deg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+#flower-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Floating Flowers */
+.scattered-flower {
+  position: absolute;
+  font-size: 3.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: gentleSway 3s ease-in-out infinite alternate;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scattered-flower.collected {
+  opacity: 0;
+  transform: scale(0) translateY(-20px);
+  pointer-events: none;
+}
+
+/* The Collection Box */
+#bouquet-box {
+  position: absolute;
+  bottom: 8vh;
+  width: 220px;
+  min-height: 120px;
+  background: var(--paper-card);
+  border: 2px dashed var(--color-coral);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-paper);
+  z-index: 10;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.box-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#collected-flowers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  font-size: 2.2rem;
+  /* Size of flowers inside the box */
+  line-height: 1;
+}
+
+/* Animation for when a flower appears inside the box */
+.flower-pop {
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  display: inline-block;
+}
+
+@keyframes gentleSway {
+  0% {
+    transform: rotate(-12deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(12deg) scale(1.05);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0) rotate(-45deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ===================================================================
+   BIG BOUQUET REVEAL (INSIDE LOADER)
+   =================================================================== */
+#big-bouquet-reveal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#big-bouquet-reveal.show {
+  opacity: 1;
+  visibility: visible;
+  animation: floatUpReveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.big-bouquet-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#big-bouquet-flowers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 180px;
+  gap: 5px;
+  font-size: 4rem;
+  /* Huge flowers for the reveal */
+  line-height: 1;
+  text-align: center;
+}
+
+.big-bouquet-ribbon {
+  font-size: 4.5rem;
+  margin-top: -25px;
+  /* Overlaps the bottom of the flowers like a tied ribbon */
+  z-index: 2;
+}
+
+.big-bouquet-text {
+  font-family: var(--font-hand);
+  font-size: 2.5rem;
+  color: var(--color-coral);
+  margin-top: 15px;
+  transform: rotate(-3deg);
+  white-space: nowrap;
+}
+
+@keyframes floatUpReveal {
+  0% {
+    transform: translate(-50%, -40%) scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
